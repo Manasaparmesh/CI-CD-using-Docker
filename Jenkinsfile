@@ -46,14 +46,14 @@ pipeline {
              
             steps 
 			{
-                sh "docker run -d -p 8003:8080 manasaparmesh/samplewebapp"
+                sh "docker run -d -p 8000:8080 manasaparmesh/samplewebapp"
  
             }
         }
  stage('Run Docker container on remote hosts') {
              
             steps {
-                sh "docker -H ssh://ec2-user@3.15.188.238 run -d -p 5000:8080 manasaparmesh/samplewebapp"
+                sh "docker -H ssh://ec2-user@3.15.188.238 run -d -p 8000:8080 manasaparmesh/samplewebapp"
  
             }
         }
