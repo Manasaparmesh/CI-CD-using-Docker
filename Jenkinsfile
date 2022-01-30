@@ -9,7 +9,7 @@ pipeline {
       stage('checkout') {
            steps {
              
-                git branch: 'master', url: 'https://github.com/devops4solutions/CI-CD-using-Docker.git'
+                git branch: 'master', url: 'https://github.com/Manasaparmesh/CI-CD-using-Docker.git'
              
           }
         }
@@ -36,7 +36,7 @@ pipeline {
            // steps {
    //     withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
    //       sh  'docker push manasaparmesh/samplewebapp:latest'
-        //  sh  'docker push nikhilnidhi/samplewebapp:$BUILD_NUMBER' 
+        //  sh  'docker push manasaparmesh/samplewebapp:$BUILD_NUMBER' 
      //   }
       //            
         //  }
