@@ -31,16 +31,19 @@ pipeline {
           }
         }
      
- // stage('Publish image to Docker Hub') {
+ stage('Publish image to Docker Hub') 
+	 {
           
-           // steps {
-   //     withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
-   //       sh  'docker push manasaparmesh/samplewebapp:latest'
-        //  sh  'docker push manasaparmesh/samplewebapp:$BUILD_NUMBER' 
-     //   }
-      //            
-        //  }
-       // }
+           steps 
+		 {
+       			 withDockerRegistry([ credentialsId: "dockerHub", url: "https://hub.docker.com/" ]) 
+			 {
+        			 sh  'docker push manasaparmesh/samplewebapp:latest'
+         			// sh  'docker push manasaparmesh/samplewebapp:$BUILD_NUMBER' 
+     			  }
+                
+        	 }
+      }
      
       stage('Run Docker container on Jenkins Agent') {
              
@@ -50,13 +53,13 @@ pipeline {
  
             }
         }
- stage('Run Docker container on remote hosts') {
+// stage('Run Docker container on remote hosts') {
              
-            steps {
-                sh "docker -H ssh://jenkins@172.31.23.137 run -d -p 8005:8080 manasaparmesh/samplewebapp"
- 
-            }
-        }
-    }
-	}
+         //   steps {
+            //    sh "docker -H ssh://jenkins@172.31.23.137 run -d -p 8005:8080 manasaparmesh/samplewebapp"
+ //
+          //  }
+       // }
+   // }
+	//}
     
