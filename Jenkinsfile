@@ -59,7 +59,7 @@ pipeline {
             //    sh "docker -H ssh://jenkins@172.31.23.137 run -d -p 8005:8080 manasaparmesh/samplewebapp"
  //
           //  }
-       // }
-   // }
-	//}
+        }
+    }
+	}
     
